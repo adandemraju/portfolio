@@ -1,0 +1,314 @@
+.projects-page {
+  padding: 120px 48px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeUp 0.6s ease both;
+}
+
+.projects-header {
+  margin-bottom: 64px;
+}
+
+.projects-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  margin: 16px 0 20px;
+}
+
+.projects-title span {
+  color: var(--accent);
+}
+
+.projects-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 480px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+/* BASE CARD */
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--card-accent, var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card:hover {
+  border-color: var(--card-accent, var(--accent));
+}
+
+/* CLICKABLE CARD */
+.project-card.clickable {
+  cursor: pointer;
+}
+
+.project-card.clickable:focus {
+  outline: 1px solid var(--card-accent, var(--accent));
+  outline-offset: 2px;
+}
+
+/* AMONG US THEME */
+.theme-among-us {
+  --card-accent: #E53935;
+  background: radial-gradient(ellipse at 30% 50%, #1a0808 0%, #0A0A0A 100%);
+}
+
+/* Stars live in ::after (::before is already the top accent bar) */
+@keyframes au-card-twinkle {
+  0%, 100% { opacity: 0.45; }
+  50%       { opacity: 1; }
+}
+
+.theme-among-us::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at  6%  12%, #fff 0%, transparent 100%),
+    radial-gradient(1px   1px   at 18%  32%, #fff 0%, transparent 100%),
+    radial-gradient(2px   2px   at 34%   7%, #fff 0%, transparent 100%),
+    radial-gradient(1px   1px   at 50%  22%, #fff 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 66%  10%, #fff 0%, transparent 100%),
+    radial-gradient(1px   1px   at 80%  35%, #fff 0%, transparent 100%),
+    radial-gradient(2px   2px   at 92%   5%, #fff 0%, transparent 100%),
+    radial-gradient(1px   1px   at 10%  55%, #fff 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 44%  50%, #fff 0%, transparent 100%),
+    radial-gradient(1px   1px   at 70%  65%, #fff 0%, transparent 100%),
+    radial-gradient(2px   2px   at  3%  78%, #fff 0%, transparent 100%),
+    radial-gradient(1px   1px   at 57%  82%, #fff 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 26%  88%, #fff 0%, transparent 100%),
+    radial-gradient(1px   1px   at 84%  74%, #fff 0%, transparent 100%),
+    radial-gradient(2px   2px   at 96%  90%, #fff 0%, transparent 100%);
+  animation: au-card-twinkle 3.5s ease-in-out infinite;
+}
+
+.theme-among-us > * { position: relative; z-index: 1; }
+
+/* ── Crewmate ejection on the card ── */
+@keyframes card-eject {
+  0%   { transform: translateX(-80px)   translateY(0px)   rotate(-8deg);  opacity: 0; }
+  8%   { opacity: 1; }
+  100% { transform: translateX(1300px)  translateY(-30px) rotate(400deg); opacity: 1; }
+}
+
+.card-crewmate {
+  position: absolute;
+  bottom: 52px;
+  left: 0;
+  width: 36px;
+  height: 46px;
+  background: #E53935;
+  border-radius: 50% 50% 42% 42% / 58% 58% 42% 42%;
+  z-index: 2;
+  animation: card-eject 7s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  animation-delay: 1s;
+}
+
+.card-crewmate-visor {
+  position: absolute;
+  width: 20px;
+  height: 14px;
+  background: linear-gradient(160deg, #FFD60A 0%, #E53935 60%, #8B1010 100%);
+  border-radius: 50% 50% 0 0;
+  top: 8px;
+  left: 8px;
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.35);
+}
+
+.card-crewmate-backpack {
+  position: absolute;
+  width: 11px;
+  height: 18px;
+  background: #8B3010;
+  border-radius: 2px 2px 3px 3px;
+  top: 10px;
+  right: -10px;
+}
+
+.theme-among-us .project-title { color: #fff; }
+.theme-among-us .stat-value { color: #E53935; }
+.theme-among-us .project-link { color: #E53935; border-color: #E53935; }
+.theme-among-us .project-link:hover { background: rgba(229,57,53,0.1); }
+.theme-among-us .stack-tag { border-color: rgba(229,57,53,0.3); color: #aaa; }
+.theme-among-us .project-tag { color: #aaa; }
+.theme-among-us .project-desc { color: #999; }
+
+/* PICKLEBALL THEME */
+.theme-pickleball {
+  --card-accent: #C5E84A;
+  background: linear-gradient(135deg, #0a0f04 0%, #0A0A0A 100%);
+}
+
+.theme-pickleball .project-title { color: #fff; }
+.theme-pickleball .stat-value { color: #C5E84A; }
+.theme-pickleball .project-link { color: #C5E84A; border-color: #C5E84A; }
+.theme-pickleball .project-tag { color: #aaa; }
+.theme-pickleball .project-desc { color: #999; }
+.theme-pickleball .stack-tag { border-color: rgba(197,232,74,0.3); color: #aaa; }
+
+/* TOPSECRET THEME */
+.theme-topsecret {
+  --card-accent: #00BCD4;
+  background: linear-gradient(135deg, #040e12 0%, #0A0A0A 100%);
+}
+
+.theme-topsecret .project-title { color: #fff; }
+.theme-topsecret .stat-value { color: #00BCD4; }
+.theme-topsecret .project-link { color: #00BCD4; border-color: #00BCD4; }
+.theme-topsecret .project-tag { color: #aaa; }
+.theme-topsecret .project-desc { color: #999; }
+.theme-topsecret .stack-tag { border-color: rgba(0,188,212,0.3); color: #aaa; }
+
+/* SHOPPING THEME */
+.theme-shopping {
+  --card-accent: #FF4081;
+  background: linear-gradient(135deg, #120408 0%, #0A0A0A 100%);
+}
+
+.theme-shopping .project-title { color: #fff; }
+.theme-shopping .stat-value { color: #FF4081; }
+.theme-shopping .project-link { color: #FF4081; border-color: #FF4081; }
+.theme-shopping .project-tag { color: #aaa; }
+.theme-shopping .project-desc { color: #999; }
+.theme-shopping .stack-tag { border-color: rgba(255,64,129,0.3); color: #aaa; }
+
+/* CARD INTERNALS */
+.project-card-header {
+  margin-bottom: 28px;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.project-tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.project-status {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.project-status.live {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.project-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.project-desc {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.8;
+  max-width: 640px;
+}
+
+.project-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 28px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.stat-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.stack-tag {
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.project-card-footer {
+  display: flex;
+}
+
+.project-link {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 1px solid;
+  transition: background 0.2s;
+}
+
+.project-link-disabled {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 10px 0;
+  opacity: 0.5;
+}

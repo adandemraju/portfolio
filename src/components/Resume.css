@@ -1,0 +1,130 @@
+.resume-page {
+  padding: 120px 48px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeUp 0.6s ease both;
+}
+
+.resume-header {
+  margin-bottom: 64px;
+}
+
+.resume-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  margin: 16px 0;
+}
+
+.resume-title span {
+  color: var(--accent);
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.resume-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.resume-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-item:last-child {
+  border-bottom: none;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 16px;
+}
+
+.resume-role {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.resume-company {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.resume-date {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.resume-desc {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.resume-bullets {
+  list-style: none;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resume-bullets li {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.7;
+  padding-left: 14px;
+  position: relative;
+}
+
+.resume-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 10px;
+}
+
+.resume-tags span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
