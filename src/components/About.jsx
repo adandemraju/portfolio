@@ -6,8 +6,8 @@ const skills = [
   'pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Plotly',
   'React', 'Vite', 'CSS', 'HTML',
   'FastAPI', 'Streamlit', 'Docker', 'PySpark',
-  'AWS Bedrock', 'Oracle Cloud Infrastructure', 'REST APIs',
-  'Git/GitHub', 'Arduino', 'Machine Learning', 'Data Engineering',
+  'REST APIs', 'Git/GitHub', 'Arduino',
+  'Machine Learning', 'Data Engineering', 'AWS AI Practitioner (in progress)',
 ]
 
 const timeline = [
@@ -22,28 +22,37 @@ const timeline = [
 function About() {
   return (
     <main className="about-page">
-      <div className="about-hero">
-        <div className="about-tag">// about</div>
-        <h1 className="about-name">
-          Ananya<br />
-          <span>Dandemraju</span>
-        </h1>
-        <p className="about-role">CS + Applied Statistics @ UVA · Class of 2028</p>
-        <p className="about-bio">
-          Second-year at the University of Virginia double-majoring in Computer Science
-          and Applied Statistics (Data Science concentration). I build ML systems, ship
-          data pipelines, and publish research. Incoming HQ Data Engineering Fellow at
-          Marriott International. Targeting FAANG-tier SWE and ML roles in 2027.
-        </p>
-        <div className="about-actions">
-          <a href="https://github.com/adandemraju" target="_blank" rel="noreferrer" className="btn-primary">
-            GitHub ↗
-          </a>
-          <a href="/Resume" className="btn-secondary">Resume</a>
-        </div>
-      </div>
 
-      <div className="about-grid">
+      {/* ── HERO ── */}
+      <section className="hero">
+        <div className="hero-blob hero-blob-1" />
+        <div className="hero-blob hero-blob-2" />
+        <div className="hero-blob hero-blob-3" />
+
+        <div className="hero-content">
+          <div className="hero-badge">· Software Engineer · ML Engineer ·</div>
+          <h1 className="hero-title">
+            Building systems<br />
+            that <span>think.</span>
+          </h1>
+          <p className="hero-sub">
+            Ananya Dandemraju — CS + Applied Statistics, UVA '28.<br />
+            Incoming HQ Data Engineering Fellow at Marriott International.
+          </p>
+          <div className="hero-actions">
+            <a href="/Projects" className="btn-primary">View Projects</a>
+            <a href="https://github.com/adandemraju" target="_blank" rel="noreferrer" className="btn-secondary">GitHub ↗</a>
+          </div>
+        </div>
+
+        <a href="#about-content" className="hero-scroll">
+          <span>Scroll down</span>
+          <div className="hero-scroll-line" />
+        </a>
+      </section>
+
+      {/* ── CONTENT ── */}
+      <div id="about-content" className="about-grid">
         <div className="about-card">
           <div className="card-label">// skills</div>
           <div className="skills-grid">
@@ -72,6 +81,7 @@ function About() {
         <span>Theta Tau Engineering Fraternity</span>
         <span>Leukemia & Lymphoma Society</span>
       </div>
+
     </main>
   )
 }

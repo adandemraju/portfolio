@@ -25,7 +25,7 @@ function Resume() {
               <li>Will design and optimize pipelines supporting enterprise-scale analytics and reporting infrastructure.</li>
             </ul>
             <div className="resume-tags">
-              <span>Python</span><span>SQL</span><span>Oracle Cloud</span><span>PySpark</span>
+              <span>Python</span><span>SQL</span><span>PySpark</span>
             </div>
           </div>
 
