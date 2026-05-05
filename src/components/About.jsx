@@ -32,11 +32,10 @@ function About() {
         <div className="hero-content">
           <div className="hero-badge">· Software Engineer · ML Engineer ·</div>
           <h1 className="hero-title">
-            Building systems<br />
-            that <span>think.</span>
+            Ananya<br /><span>Dandemraju</span>
           </h1>
           <p className="hero-sub">
-            Ananya Dandemraju — CS + Applied Statistics, UVA '28.<br />
+            CS + Applied Statistics, UVA '28.<br />
             Incoming HQ Data Engineering Fellow at Marriott International.
           </p>
           <div className="hero-actions">
