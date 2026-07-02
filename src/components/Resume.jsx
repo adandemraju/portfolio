@@ -15,14 +15,14 @@ function Resume() {
           <div className="resume-item">
             <div className="resume-item-header">
               <div>
-                <div className="resume-role">HQ Fellow — Data Engineering (Incoming)</div>
+                <div className="resume-role">HQ Fellow — Data Engineering</div>
                 <div className="resume-company">Marriott International · Bethesda, MD</div>
               </div>
               <div className="resume-date">Summer 2026</div>
             </div>
             <ul className="resume-bullets">
               <li>Competitively selected for a headquarters data engineering fellowship at a Fortune 500 company.</li>
-              <li>Will design and optimize pipelines supporting enterprise-scale analytics and reporting infrastructure.</li>
+              <li>Designing and optimizing pipelines supporting enterprise-scale analytics and reporting infrastructure.</li>
             </ul>
             <div className="resume-tags">
               <span>Python</span><span>SQL</span><span>Oracle Cloud</span><span>PySpark</span>

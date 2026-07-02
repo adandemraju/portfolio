@@ -14,9 +14,9 @@ const timeline = [
   { year: '2027', label: 'Seeking AI/ML & SWE Internship', type: 'goal' },
   { year: 'Summer 2026', label: 'HQ Data Engineering Fellow — Marriott International', type: 'work' },
   { year: 'Summer 2025', label: 'Software Engineering Intern — Smart Analytics Inc.', type: 'work' },
+  { year: 'Aug 2024', label: 'University of Virginia — CS + Applied Statistics (Finance & Business)', type: 'edu' },
   { year: "Summers '23–'24", label: 'AI/ML Engineer — METY Technology', type: 'work' },
   { year: '2023', label: 'Published ML Research — Int\'l Journal of Social Science & Economic Research', type: 'achievement' },
-  { year: 'Aug 2024', label: 'University of Virginia — CS + Applied Statistics (Finance & Business)', type: 'edu' },
 ]
 
 function About() {
@@ -34,7 +34,7 @@ function About() {
           </h1>
           <p className="hero-sub">
             with a passion for building intelligent systems that ship.
-            CS + Applied Statistics at UVA — incoming HQ Data Engineering
+            CS + Applied Statistics at UVA — HQ Data Engineering
             Fellow at Marriott International.
           </p>
 
