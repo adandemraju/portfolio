@@ -1,85 +1,230 @@
 .projects-page {
-  padding: 120px 48px 80px;
+  padding: 140px 8vw 100px;
   max-width: 1100px;
   margin: 0 auto;
   animation: fadeUp 0.6s ease both;
 }
 
 .projects-header {
-  margin-bottom: 64px;
+  margin-bottom: 56px;
 }
 
 .projects-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 800;
-  font-size: clamp(48px, 7vw, 88px);
-  line-height: 0.95;
-  letter-spacing: -2px;
-  margin: 16px 0 20px;
+  font-family: var(--font-display);
+  font-size: clamp(44px, 7vw, 84px);
+  font-weight: 620;
+  font-variation-settings: 'opsz' 144;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+  margin-bottom: 24px;
 }
 
-.projects-title span {
-  color: var(--accent);
+.projects-title em {
+  font-style: italic;
+  font-weight: 560;
 }
 
 .projects-subtitle {
-  font-size: 13px;
-  color: var(--text-muted);
-  max-width: 480px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 540px;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2px;
+  gap: 24px;
 }
 
-/* BASE CARD */
+/* ── BASE CARD (light editorial) ── */
 .project-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  padding: 40px;
+  border-radius: 20px;
+  padding: 44px;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--card-accent, var(--accent));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover::before {
-  transform: scaleX(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
-  border-color: var(--card-accent, var(--accent));
+  transform: translateY(-3px);
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
 }
 
-/* CLICKABLE CARD */
 .project-card.clickable {
   cursor: pointer;
 }
 
-.project-card.clickable:focus {
-  outline: 1px solid var(--card-accent, var(--accent));
-  outline-offset: 2px;
+.project-card.clickable:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
 }
 
-/* AMONG US THEME */
+/* ── CARD INTERNALS ── */
+.project-card-header {
+  margin-bottom: 28px;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.project-tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.project-status {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--border-strong);
+  color: var(--ink-soft);
+}
+
+.project-status.live {
+  border-color: #1D9E75;
+  color: #5DCAA5;
+  background: rgba(29, 158, 117, 0.1);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.4vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.project-desc {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  max-width: 660px;
+}
+
+.project-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.stat-label {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.stack-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 99px;
+  color: var(--ink-soft);
+  background: transparent;
+}
+
+.project-card-footer {
+  display: flex;
+}
+
+.project-link {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: 1.5px solid var(--ink);
+  border-radius: 99px;
+  color: var(--ink);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.project-card:hover .project-link {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.project-link-disabled {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: 12px 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   AMONG US THEME — original dark starfield card, preserved
+   ══════════════════════════════════════════════════════════════ */
 .theme-among-us {
   --card-accent: #E53935;
   background: radial-gradient(ellipse at 30% 50%, #1a0808 0%, #0A0A0A 100%);
+  border-color: #222;
 }
 
-/* Stars live in ::after (::before is already the top accent bar) */
+.theme-among-us:hover {
+  border-color: #E53935;
+  box-shadow: 0 24px 48px rgba(229, 57, 53, 0.12);
+}
+
+.theme-among-us::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: #E53935;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+
+.theme-among-us:hover::before {
+  transform: scaleX(1);
+}
+
 @keyframes au-card-twinkle {
   0%, 100% { opacity: 0.45; }
   50%       { opacity: 1; }
@@ -112,7 +257,6 @@
 
 .theme-among-us > * { position: relative; z-index: 1; }
 
-/* ── Crewmate ejection on the card ── */
 @keyframes card-eject {
   0%   { transform: translateX(-80px)   translateY(0px)   rotate(-8deg);  opacity: 0; }
   8%   { opacity: 1; }
@@ -154,161 +298,83 @@
 }
 
 .theme-among-us .project-title { color: #fff; }
-.theme-among-us .stat-value { color: #E53935; }
-.theme-among-us .project-link { color: #E53935; border-color: #E53935; }
-.theme-among-us .project-link:hover { background: rgba(229,57,53,0.1); }
-.theme-among-us .stack-tag { border-color: rgba(229,57,53,0.3); color: #aaa; }
 .theme-among-us .project-tag { color: #aaa; }
-.theme-among-us .project-desc { color: #999; }
-
-/* PICKLEBALL THEME */
-.theme-pickleball {
-  --card-accent: #C5E84A;
-  background: linear-gradient(135deg, #0a0f04 0%, #0A0A0A 100%);
+.theme-among-us .project-desc { color: #a8a8a8; }
+.theme-among-us .stat-value { color: #E53935; }
+.theme-among-us .stat-label { color: #888; }
+.theme-among-us .project-stats { border-color: rgba(255, 255, 255, 0.12); }
+.theme-among-us .stack-tag {
+  border-color: rgba(229, 57, 53, 0.3);
+  color: #aaa;
+  background: transparent;
+}
+.theme-among-us .project-status.live {
+  border-color: #E53935;
+  color: #ff8a85;
+  background: rgba(229, 57, 53, 0.1);
+}
+.theme-among-us .project-link {
+  color: #E53935;
+  border-color: #E53935;
+}
+.theme-among-us:hover .project-link {
+  background: rgba(229, 57, 53, 0.12);
+  color: #ff6f6a;
+}
+.theme-among-us.clickable:focus-visible {
+  outline-color: #E53935;
 }
 
-.theme-pickleball .project-title { color: #fff; }
-.theme-pickleball .stat-value { color: #C5E84A; }
-.theme-pickleball .project-link { color: #C5E84A; border-color: #C5E84A; }
-.theme-pickleball .project-tag { color: #aaa; }
-.theme-pickleball .project-desc { color: #999; }
-.theme-pickleball .stack-tag { border-color: rgba(197,232,74,0.3); color: #aaa; }
-
-/* TOPSECRET THEME */
+/* ── TOP SECRET THEME ── */
 .theme-topsecret {
-  --card-accent: #00BCD4;
-  background: linear-gradient(135deg, #040e12 0%, #0A0A0A 100%);
+  background:
+    radial-gradient(640px 320px at 92% -12%, rgba(0, 188, 212, 0.1) 0%, transparent 65%),
+    var(--surface);
 }
 
-.theme-topsecret .project-title { color: #fff; }
-.theme-topsecret .stat-value { color: #00BCD4; }
-.theme-topsecret .project-link { color: #00BCD4; border-color: #00BCD4; }
-.theme-topsecret .project-tag { color: #aaa; }
-.theme-topsecret .project-desc { color: #999; }
-.theme-topsecret .stack-tag { border-color: rgba(0,188,212,0.3); color: #aaa; }
+.theme-topsecret .project-tag { color: #5DD4E8; }
 
-/* SHOPPING THEME */
-.theme-shopping {
-  --card-accent: #FF4081;
-  background: linear-gradient(135deg, #120408 0%, #0A0A0A 100%);
+/* ── AI SRE AGENT THEME ── */
+.theme-sre {
+  background:
+    radial-gradient(640px 320px at 92% -12%, var(--accent-soft) 0%, transparent 65%),
+    var(--surface);
 }
 
-.theme-shopping .project-title { color: #fff; }
-.theme-shopping .stat-value { color: #FF4081; }
-.theme-shopping .project-link { color: #FF4081; border-color: #FF4081; }
-.theme-shopping .project-tag { color: #aaa; }
-.theme-shopping .project-desc { color: #999; }
-.theme-shopping .stack-tag { border-color: rgba(255,64,129,0.3); color: #aaa; }
-
-/* CARD INTERNALS */
-.project-card-header {
-  margin-bottom: 28px;
-}
-
-.project-meta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.project-tag {
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.project-status {
-  font-size: 9px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-}
-
-.project-status.live {
-  border-color: var(--accent);
+.theme-sre .project-tag { color: var(--accent); }
+.theme-sre .project-status {
+  border-color: rgba(165, 160, 245, 0.4);
   color: var(--accent);
+  background: rgba(109, 91, 255, 0.12);
 }
 
-.project-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 110px 24px 64px;
+  }
+
+  .projects-header {
+    margin-bottom: 36px;
+  }
+
+  .project-card {
+    padding: 28px 22px;
+  }
+
+  .project-stats {
+    gap: 28px;
+  }
+
+  .card-crewmate {
+    display: none;
+  }
 }
 
-.project-desc {
-  font-size: 13px;
-  color: #888;
-  line-height: 1.8;
-  max-width: 640px;
-}
-
-.project-stats {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 28px;
-  padding: 24px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.stat-value {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-}
-
-.stat-label {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.project-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 32px;
-}
-
-.stack-tag {
-  font-size: 10px;
-  letter-spacing: 1px;
-  padding: 4px 10px;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-}
-
-.project-card-footer {
-  display: flex;
-}
-
-.project-link {
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  border: 1px solid;
-  transition: background 0.2s;
-}
-
-.project-link-disabled {
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  padding: 10px 0;
-  opacity: 0.5;
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  .theme-among-us::after,
+  .card-crewmate {
+    animation: none;
+  }
 }

@@ -4,19 +4,19 @@ function Resume() {
   return (
     <main className="resume-page">
       <div className="resume-header">
-        <div className="about-tag">// resume</div>
-        <h1 className="resume-title">Experience &<br /><span>Education</span></h1>
+        <div className="page-kicker">( resume )</div>
+        <h1 className="resume-title">experience + <em>education</em></h1>
       </div>
 
       <div className="resume-grid">
         <div className="resume-section">
-          <div className="section-label">// experience</div>
+          <div className="section-label">( experience )</div>
 
           <div className="resume-item">
             <div className="resume-item-header">
               <div>
-                <div className="resume-role">HQ Fellow — Data Engineering</div>
-                <div className="resume-company">Marriott International</div>
+                <div className="resume-role">HQ Fellow — Data Engineering (Incoming)</div>
+                <div className="resume-company">Marriott International · Bethesda, MD</div>
               </div>
               <div className="resume-date">Summer 2026</div>
             </div>
@@ -25,7 +25,7 @@ function Resume() {
               <li>Will design and optimize pipelines supporting enterprise-scale analytics and reporting infrastructure.</li>
             </ul>
             <div className="resume-tags">
-              <span>Python</span><span>SQL</span><span>PySpark</span>
+              <span>Python</span><span>SQL</span><span>Oracle Cloud</span><span>PySpark</span>
             </div>
           </div>
 
@@ -33,15 +33,15 @@ function Resume() {
             <div className="resume-item-header">
               <div>
                 <div className="resume-role">Software Engineering Intern</div>
-                <div className="resume-company">Smart Analytics Inc.</div>
+                <div className="resume-company">Smart Analytics Inc. · Ashburn, VA</div>
               </div>
-              <div className="resume-date">Jun 2024 – Aug 2025</div>
+              <div className="resume-date">Summer 2025</div>
             </div>
             <ul className="resume-bullets">
-              <li>Automated analytics workflows in Python with NumPy and pandas, reducing manual reporting time by 30%.</li>
-              <li>Wrote data cleaning and transformation scripts adopted across 3+ teams, standardizing inputs and reducing pipeline errors.</li>
-              <li>Partnered with engineers to harden QA checks and document reporting standards, accelerating stakeholder review cycles.</li>
-              <li>Produced statistical analyses and visualizations that informed product decisions and cut approval timelines by 20%.</li>
+              <li>Engineered automated analytics workflows in Python using NumPy and pandas across a multi-stage data pipeline, eliminating error-prone manual handoffs and reducing end-to-end reporting time by 30%.</li>
+              <li>Developed reusable data cleaning and transformation libraries adopted across 3+ engineering teams, standardizing input schemas and enforcing consistent preprocessing contracts.</li>
+              <li>Partnered with senior engineers to architect automated QA validation checks and documented reporting standards, hardening data integrity guarantees and accelerating stakeholder review cycles.</li>
+              <li>Built modular statistical analysis components and visualization dashboards that surfaced actionable product insights, informing feature prioritization and cutting approval timelines by 20%.</li>
             </ul>
             <div className="resume-tags">
               <span>Python</span><span>NumPy</span><span>pandas</span><span>SQL</span>
@@ -52,14 +52,14 @@ function Resume() {
             <div className="resume-item-header">
               <div>
                 <div className="resume-role">AI/ML Engineer</div>
-                <div className="resume-company">METY Technology</div>
+                <div className="resume-company">METY Technology · Ashburn, VA</div>
               </div>
-              <div className="resume-date">Jun 2022 – Jun 2025</div>
+              <div className="resume-date">Summers 2023, 2024</div>
             </div>
             <ul className="resume-bullets">
-              <li>Designed and deployed an end-to-end ML pipeline for a wellness app with 100+ users, personalizing plans via supervised and unsupervised models.</li>
-              <li>Built and tuned scikit-learn models (logistic regression, random forests), boosting recommendation accuracy by 15% through preprocessing and cross-validation.</li>
-              <li>Established versioned metrics tracking across model iterations, enabling reproducible experiments and faster debugging.</li>
+              <li>Designed and deployed an end-to-end ML pipeline serving 100+ users on a wellness app, integrating supervised and unsupervised models to personalize health plans across behavioral and biometric inputs.</li>
+              <li>Built and tuned scikit-learn classification models (logistic regression, random forests) through iterative preprocessing, hyperparameter tuning, and k-fold cross-validation, improving recommendation accuracy by 15%.</li>
+              <li>Established a versioned metrics tracking system using structured logging and experiment metadata, standardizing reproducibility and cutting debugging time across the model lifecycle.</li>
               <li>Published peer-reviewed research on ML-driven wellness outcomes in the International Journal of Social Science and Economic Research.</li>
             </ul>
             <div className="resume-tags">
@@ -69,7 +69,7 @@ function Resume() {
         </div>
 
         <div className="resume-section">
-          <div className="section-label">// education</div>
+          <div className="section-label">( education )</div>
 
           <div className="resume-item">
             <div className="resume-item-header">
@@ -79,13 +79,13 @@ function Resume() {
               </div>
               <div className="resume-date">Aug 2024 – May 2028</div>
             </div>
-            <p className="resume-desc">Data Science Concentration. GPA 3.6. Coursework: Data Structures & Algorithms, AI, Machine Learning, Statistical ML, Software Engineering, Discrete Math, Linear Algebra.</p>
+            <p className="resume-desc">Finance & Business Concentration. GPA 3.6. Coursework: Data Structures & Algorithms, Computer Systems & Organization, Discrete Math & Theory, Software Development Essentials, Software Engineering, AI, Machine Learning, Statistical ML, Linear Algebra.</p>
             <div className="resume-tags">
               <span>CS</span><span>Applied Statistics</span><span>GPA 3.6</span>
             </div>
           </div>
 
-          <div className="section-label" style={{marginTop: '40px'}}>// publications</div>
+          <div className="section-label" style={{marginTop: '48px'}}>( publications )</div>
 
           <div className="resume-item">
             <div className="resume-item-header">
@@ -100,7 +100,7 @@ function Resume() {
             </div>
           </div>
 
-          <div className="section-label" style={{marginTop: '40px'}}>// leadership</div>
+          <div className="section-label" style={{marginTop: '48px'}}>( leadership )</div>
 
           <div className="resume-item">
             <div className="resume-item-header">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Archivo:wght@400;500;600;700&family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -8,6 +8,25 @@
 
 :root {
   --bg: #000000;
+  --surface: #121110;
+  --ink: #F4F2EC;
+  --ink-soft: #B9B5AA;
+  --ink-faint: #86816F;
+  --border: #262420;
+  --border-strong: #403D35;
+  --accent: #A5A0F5;
+  --accent-soft: rgba(109, 91, 255, 0.16);
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+
+  /* legacy aliases still referenced by shared pieces */
+  --text: var(--ink);
+  --text-muted: var(--ink-faint);
+}
+
+/* The Among Us case-study page keeps its original dark system untouched */
+.au-page {
+  --bg: #000000;
   --surface: #0f0f0f;
   --border: #222222;
   --text: #FFFFFF;
@@ -15,20 +34,60 @@
   --accent: #FFFFFF;
   --accent-light: #CCCCCC;
   --accent-dim: rgba(255, 255, 255, 0.06);
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  background: #000;
 }
 
 html { scroll-behavior: smooth; }
 
-
 body {
   background: var(--bg);
-  color: var(--text);
-  font-family: 'Space Mono', monospace;
-  font-size: 14px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
   line-height: 1.7;
-  min-height: 100vh;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
 }
 
 a { color: inherit; text-decoration: none; }
 
-#root { display: flex; flex-direction: column; min-height: 100vh; }
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.au-page a:focus-visible,
+.au-page [role='button']:focus-visible {
+  outline-color: #fff;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+#root { display: flex; flex-direction: column; min-height: 100dvh; }
+
+/* Shared editorial helpers */
+.page-kicker {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

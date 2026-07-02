@@ -6,8 +6,8 @@ const projects = [
     id: 'among-us',
     title: 'Among Us Impostor Predictor',
     tag: 'ML / Classification',
-    description: 'Random Forest classifier trained on 2,227 real game logs to predict whether a player is the Impostor — without using kill data. Includes full data leakage analysis, feature engineering, and model comparison.',
-    stack: ['Python', 'scikit-learn', 'pandas', 'Jupyter', 'AWS Bedrock (soon)'],
+    description: 'End-to-end ML pipeline across 2,227 real game logs — 81.8% accuracy and a 14% cut in false negatives over baseline, with full data leakage analysis. Deployed as a RESTful inference API with LLM-generated probabilistic reasoning over live gameplay.',
+    stack: ['Python', 'pandas', 'scikit-learn', 'FastAPI', 'Gemini API'],
     stats: [
       { label: 'Accuracy', value: '81.8%' },
       { label: 'Games', value: '2,227' },
@@ -19,27 +19,27 @@ const projects = [
     status: 'live',
   },
   {
-    id: 'pickleball',
-    title: 'Pickleball Match Tracker + AI Coaching',
-    tag: 'AI / Sports Tech',
-    description: 'AI-powered pickleball match tracker that logs rally data, shot patterns, and player stats. An LLM coaching layer analyzes recorded sessions and delivers personalized feedback and drill recommendations.',
-    stack: ['Python', 'React', 'FastAPI', 'LLM', 'Computer Vision'],
+    id: 'topsecret',
+    title: 'Top Secret — Mission Management System',
+    tag: 'Java / MVC / SQL',
+    description: 'Java MVC application for managing classified mission operations — agents, facilities, missions, and briefs — backed by a SQL database with full audit logging. Every create, assign, and import action is recorded to a persistent audit trail, with dual terminal and HTML interfaces from a single entry point. Built as a 3-person team project across Model, Controller, and View roles.',
+    stack: ['Java', 'SQL', 'JDBC', 'JUnit', 'Mockito', 'HTML'],
     stats: [],
-    github: null,
+    github: 'https://github.com/adandemraju/TopSecret-2-5',
     detailRoute: null,
-    theme: 'pickleball',
-    status: 'coming-soon',
+    theme: 'topsecret',
+    status: 'live',
   },
   {
-    id: 'shopping',
-    title: 'AI Shopping Assistant',
-    tag: 'AI / NLP',
-    description: 'Conversational shopping assistant powered by a large language model. Takes natural language queries and returns ranked product recommendations with explanations.',
-    stack: ['Python', 'LLM', 'React', 'FastAPI', 'AWS'],
+    id: 'sre-agent',
+    title: 'Self-Improving On-Call Triage Agent',
+    tag: 'AI / SRE Agent',
+    description: 'Autonomous on-call triage agent: when an alert fires, it proposes a root cause, impact estimate, runbook, and drafted comms — then learns from adjudicated outcomes. Built around a frozen eval harness with ablations, model comparisons, and a learning curve proving accuracy improves as it works more incidents.',
+    stack: ['Python', 'Gemini API', 'Hugging Face', 'FastAPI', 'React', 'SQLite'],
     stats: [],
     github: null,
     detailRoute: null,
-    theme: 'shopping',
+    theme: 'sre',
     status: 'coming-soon',
   },
 ]
@@ -70,7 +70,7 @@ function ProjectCard({ project }) {
         <div className="project-meta">
           <span className="project-tag">{project.tag}</span>
           {project.status === 'coming-soon' && (
-            <span className="project-status">In Progress</span>
+            <span className="project-status">Coming Soon</span>
           )}
           {project.status === 'live' && (
             <span className="project-status live">Live</span>
@@ -118,9 +118,9 @@ function Projects() {
   return (
     <main className="projects-page">
       <div className="projects-header">
-        <div className="about-tag">// projects</div>
+        <div className="page-kicker">( projects )</div>
         <h1 className="projects-title">
-          Things I've<br /><span>Built</span>
+          things I've <em>built</em>
         </h1>
         <p className="projects-subtitle">
           ML systems, embedded hardware, and full-stack apps — targeting SWE and ML roles at top-tier companies.
